@@ -15,13 +15,10 @@ import java.util.Properties;
 /**
  * @author Zyi
  */
-@RestController
-@RequestMapping("/test")
 public class Controller {
 
     StanfordCoreNLP pipeline;
 
-    @RequestMapping("getStr")
     public List<String> getStr(String text) {
         return segInCh(text);
     }

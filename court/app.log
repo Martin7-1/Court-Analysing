@@ -1,0 +1,168 @@
+2021-12-08 14:48:41.468  INFO 21024 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 21024 (D:\Java\Programs\Court\court\target\classes started by Zyi in D:\Java\Programs\Court\court)
+2021-12-08 14:48:41.470  INFO 21024 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2021-12-08 14:48:41.972  WARN 21024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2021-12-08 14:48:42.263  INFO 21024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-08 14:48:42.271  INFO 21024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-08 14:48:42.272  INFO 21024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-08 14:48:42.349  INFO 21024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-08 14:48:42.349  INFO 21024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 847 ms
+2021-12-08 14:48:42.592  INFO 21024 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-12-08 14:48:42.772  INFO 21024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-08 14:48:42.780  INFO 21024 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.902 seconds (JVM running for 3.048)
+2021-12-08 14:49:07.401  INFO 21024 --- [http-nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030x070xa90xdc0x110xc8fP%0x0e0x8bJV:w0x850xd6<h0xf3]0xcb0xe20x0a50xba0xfck0xa10xe70xd50xe30xf3 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-12-08 14:49:07.401  INFO 21024 --- [http-nio-8080-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03|0xf50x130xb5-c0xf7[0xc90xfcL0x850x880x840xf4)0x800xefd0xe1@0xc20xe80xae0xec0x9d0x80^a40xf60xd2 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-12-08 14:50:01.370  INFO 3144 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 3144 (D:\Java\Programs\Court\court\target\classes started by Zyi in D:\Java\Programs\Court\court)
+2021-12-08 14:50:01.372  INFO 3144 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2021-12-08 14:50:01.818  WARN 3144 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2021-12-08 14:50:02.043  INFO 3144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-08 14:50:02.049  INFO 3144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-08 14:50:02.049  INFO 3144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-08 14:50:02.137  INFO 3144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-08 14:50:02.137  INFO 3144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 733 ms
+2021-12-08 14:50:02.304  INFO 3144 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-12-08 14:50:02.453  INFO 3144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-08 14:50:02.460  INFO 3144 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.459 seconds (JVM running for 2.208)
+2021-12-08 14:50:02.592  INFO 3144 --- [http-nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030x7f0xfe-0xcfb0xd40xdd0x8980xd40xd50xf3$0x120xe00x0f0x7f0xf80xc40xa470xda0xc30x09I0xe6}0xb8h0xc30xfd0xd1 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-12-08 14:50:02.592  INFO 3144 --- [http-nio-8080-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xd90x03-0xfc0xb60x140xed0x168W0xc30xa90xd2T0xe90xee0x8d0xb0KWb0xb30xa20xc80x9cW0xb8H0xfc0xd8=0xca ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-12-08 14:50:02.614  INFO 3144 --- [http-nio-8080-exec-5] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xecSW0x9010xde!10xda._=,X0x0f0xca0xca%0xd00xd80x17G0x9f0xc90xc50xf80xf1f0xa7}{0xf1 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-12-08 14:51:02.955  INFO 25112 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 25112 (D:\Java\Programs\Court\court\target\classes started by Zyi in D:\Java\Programs\Court\court)
+2021-12-08 14:51:02.958  INFO 25112 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2021-12-08 14:51:03.419  WARN 25112 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2021-12-08 14:51:03.654  INFO 25112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-08 14:51:03.660  INFO 25112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-08 14:51:03.660  INFO 25112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-08 14:51:03.736  INFO 25112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-08 14:51:03.736  INFO 25112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 740 ms
+2021-12-08 14:51:03.895  INFO 25112 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-12-08 14:51:04.048  INFO 25112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-08 14:51:04.055  INFO 25112 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.502 seconds (JVM running for 2.288)
+2021-12-08 14:51:13.744  INFO 25112 --- [http-nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xb0}0xed0x9f0xc90x890x040xc3]0xad0xf80x10c0x9bW0x13Bb,0x110xde0x1cHS0x8f0x8e0x980x8f0xef7Nu ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-12-08 14:51:13.744  INFO 25112 --- [http-nio-8080-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x0310x9c0xad0"0xb60xc90x890xf10xc5=0xf80xf00x130xa10x81DW0xa20xec0xab0x0fd0xbc0x080xe70xb90xf70x850xd70x810xe5 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-12-08 14:52:31.972  INFO 21892 --- [main] com.nju.edu.court.CourtApplicationTests  : Starting CourtApplicationTests using Java 1.8.0_301 on Zyi with PID 21892 (started by Zyi in D:\Java\Programs\Court\court)
+2021-12-08 14:52:31.973  INFO 21892 --- [main] com.nju.edu.court.CourtApplicationTests  : No active profile set, falling back to default profiles: default
+2021-12-08 14:52:32.501  WARN 21892 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2021-12-08 14:52:35.346  INFO 21892 --- [main] com.nju.edu.court.CourtApplicationTests  : Started CourtApplicationTests in 6.923 seconds (JVM running for 42.94)
+2021-12-08 14:52:44.538  INFO 23884 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 23884 (D:\Java\Programs\Court\court\target\classes started by Zyi in D:\Java\Programs\Court\court)
+2021-12-08 14:52:44.540  INFO 23884 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2021-12-08 14:52:44.973  WARN 23884 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2021-12-08 14:52:45.204  INFO 23884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-08 14:52:45.210  INFO 23884 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-08 14:52:45.211  INFO 23884 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-08 14:52:45.286  INFO 23884 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-08 14:52:45.286  INFO 23884 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 709 ms
+2021-12-08 14:52:45.587  INFO 23884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-08 14:52:45.594  INFO 23884 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.443 seconds (JVM running for 2.204)
+2021-12-08 14:52:59.985  INFO 23884 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-08 14:52:59.985  INFO 23884 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-08 14:52:59.986  INFO 23884 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-08 15:04:07.109  INFO 32472 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 32472 (D:\Java\Programs\Court\court\target\classes started by Zyi in D:\Java\Programs\Court\court)
+2021-12-08 15:04:07.111  INFO 32472 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2021-12-08 15:04:07.553  WARN 32472 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2021-12-08 15:04:07.784  INFO 32472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-08 15:04:07.791  INFO 32472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-08 15:04:07.791  INFO 32472 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-08 15:04:07.865  INFO 32472 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-08 15:04:07.865  INFO 32472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 715 ms
+2021-12-08 15:04:08.174  INFO 32472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-08 15:04:08.181  INFO 32472 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.442 seconds (JVM running for 2.194)
+2021-12-08 15:04:20.947  INFO 32472 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-08 15:04:20.948  INFO 32472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-08 15:04:20.949  INFO 32472 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
