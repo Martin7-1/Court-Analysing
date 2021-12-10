@@ -22,7 +22,7 @@ public class ControllerTest {
     @Test
     public void NLPTest1() {
         String sentence = "我是一名大学生";
-        List<String> actual = controller.getStr(sentence);
+        List<String> actual = controller.get(sentence);
 
         for (String word : actual) {
             System.out.println(word);
@@ -53,7 +53,7 @@ public class ControllerTest {
 
         try {
             for (String sentence : sentences) {
-                res = controller.getStr(sentence);
+                res = controller.get(sentence);
                 for (String word : res) {
                     out.write(word);
                     out.write("\r\n");
