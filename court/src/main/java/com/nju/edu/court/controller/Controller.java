@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -28,7 +29,8 @@ public class Controller {
     }
 
     public List<String> get(String text) {
-        return null;
+        String newText = segInCh(text);
+        return new ArrayList<>(Arrays.asList(newText.split("\n")));
     }
 
     public void init() {
@@ -41,7 +43,7 @@ public class Controller {
 
         // 解析
         pipeline.annotate(annotation);
-        pipeline.prettyPrint(annotation, System.out);
+        // pipeline.prettyPrint(annotation, System.out);
         List<CoreMap> sentences = annotation.get(CoreAnnotations.SentencesAnnotation.class);
 
         List<String> res = new ArrayList<>();
@@ -55,7 +57,7 @@ public class Controller {
         StringBuilder tokens = new StringBuilder();
         for (String word : res) {
             tokens.append(word);
-            tokens.append("\r\n");
+            tokens.append("\n");
         }
 
         return tokens.toString();

@@ -43,7 +43,6 @@ public class ControllerTest {
     @Test
     public void NLPTest2() throws Exception {
         BufferedReader in = new BufferedReader(new FileReader("D:\\Java\\Programs\\Court\\court\\src\\test\\java\\com\\nju\\edu\\court\\controller\\courtIn.txt"));
-        BufferedWriter out = new BufferedWriter(new FileWriter("D:\\Java\\Programs\\Court\\court\\src\\test\\java\\com\\nju\\edu\\court\\controller\\courtOut.txt"));
         List<String> sentences = new ArrayList<>();
         String input;
         while (((input = in.readLine()) != null)) {
@@ -55,13 +54,12 @@ public class ControllerTest {
             for (String sentence : sentences) {
                 res = controller.get(sentence);
                 for (String word : res) {
-                    out.write(word);
-                    out.write("\r\n");
+                    System.out.print(word + " ");
                 }
+                System.out.println();
             }
         } finally {
             in.close();
-            out.close();
         }
 
         assertEquals(10, 10);
