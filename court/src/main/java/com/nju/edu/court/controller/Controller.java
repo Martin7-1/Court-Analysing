@@ -4,6 +4,10 @@ import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.semgraph.SemanticGraph;
+import edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations;
+import edu.stanford.nlp.trees.Tree;
+import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Properties;
 
 /**
  * @author Zyi
@@ -54,6 +57,8 @@ public class Controller {
             }
         }
 
+        output(sentences);
+
         StringBuilder tokens = new StringBuilder();
         for (String word : res) {
             tokens.append(word);
@@ -61,6 +66,25 @@ public class Controller {
         }
 
         return tokens.toString();
+    }
+
+    private void output(List<CoreMap> sentences) {
+        for (CoreMap sentence : sentences) {
+            for (CoreLabel token : sentence.get(CoreAnnotations.TokensAnnotation.class)) {
+                // 获取分词
+                String word = token.get(CoreAnnotations.TextAnnotation.class);
+                // 获取词性标注
+                String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
+                // 获取命名实体识别结果
+                String ner = token.get(CoreAnnotations.NamedEntityTagAnnotation.class);
+                // 获取词形还原结果
+                String lemma = token.get(CoreAnnotations.LemmaAnnotation.class);
+                System.out.println(word + "\t" + pos + "\t" + ner + "\t" + lemma);
+            }
+
+            Tree tree = sentence.get(TreeCoreAnnotations.TreeAnnotation.class);
+            System.out.println(tree.toString());
+        }
     }
 
     public static void main(String[] args) throws Exception {

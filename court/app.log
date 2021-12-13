@@ -1,0 +1,60 @@
+2021-12-12 23:08:04.728  INFO 14580 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 14580 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2021-12-12 23:08:04.730  INFO 14580 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2021-12-12 23:08:05.157  WARN 14580 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2021-12-12 23:08:05.701  INFO 14580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-12 23:08:05.709  INFO 14580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-12 23:08:05.709  INFO 14580 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-12 23:08:05.774  INFO 14580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-12 23:08:05.775  INFO 14580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1013 ms
+2021-12-12 23:08:05.948  INFO 14580 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-12-12 23:08:06.089  INFO 14580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-12 23:08:06.096  INFO 14580 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.773 seconds (JVM running for 2.111)
+2021-12-12 23:08:30.136  INFO 14580 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-12 23:08:30.137  INFO 14580 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-12 23:08:30.138  INFO 14580 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-12 23:08:35.885  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Searching for resource: StanfordCoreNLP-chinese.properties ... found.
+2021-12-12 23:08:35.894  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator tokenize
+2021-12-12 23:08:55.656  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.ie.AbstractSequenceClassifier    : Loading classifier from edu/stanford/nlp/models/segmenter/chinese/ctb.gz ... done [19.7 sec].
+2021-12-12 23:08:55.658  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ssplit
+2021-12-12 23:08:55.661  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator pos
+2021-12-12 23:08:56.045  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.tagger.maxent.MaxentTagger       : Loading POS tagger from edu/stanford/nlp/models/pos-tagger/chinese-distsim.tagger ... done [0.4 sec].
+2021-12-12 23:08:56.046  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator lemma
+2021-12-12 23:08:56.047  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ner
+2021-12-12 23:09:01.041  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.ie.AbstractSequenceClassifier    : Loading classifier from edu/stanford/nlp/models/ner/chinese.misc.distsim.crf.ser.gz ... done [5.0 sec].
+2021-12-12 23:09:01.122  INFO 14580 --- [http-nio-8080-exec-2] e.s.n.pipeline.TokensRegexNERAnnotator   : ner.fine.regexner: Read 21238 unique entries out of 21249 from edu/stanford/nlp/models/kbp/chinese/gazetteers/cn_regexner_mapping.tab, 0 TokensRegex patterns.
+2021-12-12 23:09:01.245  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.pipeline.NERCombinerAnnotator    : numeric classifiers: true; SUTime: false [no docDate]; fine grained: true
+2021-12-12 23:09:01.248  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator parse
+2021-12-12 23:09:06.820  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.parser.common.ParserGrammar      : Loading parser from serialized file edu/stanford/nlp/models/srparser/chineseSR.ser.gz ... done [5.6 sec].
+2021-12-12 23:09:06.824  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator coref
+2021-12-12 23:09:12.882  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.pipeline.CorefMentionAnnotator   : Using mention detector type: rule
+2021-12-12 23:09:12.889  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.wordseg.ChineseDictionary        : Loading Chinese dictionaries from 1 file:
+2021-12-12 23:09:12.889  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.wordseg.ChineseDictionary        :   edu/stanford/nlp/models/segmenter/chinese/dict-chris6.ser.gz
+2021-12-12 23:09:13.079  INFO 14580 --- [http-nio-8080-exec-2] e.s.nlp.wordseg.ChineseDictionary        : Done. Unique words in ChineseDictionary is: 423200.
+2021-12-12 23:09:13.115  INFO 14580 --- [http-nio-8080-exec-2] edu.stanford.nlp.wordseg.CorpusChar      : Loading character dictionary file from edu/stanford/nlp/models/segmenter/chinese/dict/character_list [done].
+2021-12-12 23:09:13.116  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.wordseg.AffixDictionary   : Loading affix dictionary from edu/stanford/nlp/models/segmenter/chinese/dict/in.ctb [done].
+2021-12-12 23:09:13.134  INFO 14580 --- [http-nio-8080-exec-2] edu.stanford.nlp.wordseg.CorpusChar      : Loading character dictionary file from edu/stanford/nlp/models/segmenter/chinese/dict/character_list [done].
+2021-12-12 23:09:13.135  INFO 14580 --- [http-nio-8080-exec-2] e.stanford.nlp.wordseg.AffixDictionary   : Loading affix dictionary from edu/stanford/nlp/models/segmenter/chinese/dict/in.ctb [done].
+2021-12-12 23:09:23.793  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Searching for resource: StanfordCoreNLP-chinese.properties ... found.
+2021-12-12 23:09:23.796  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator tokenize
+2021-12-12 23:09:23.796  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ssplit
+2021-12-12 23:09:23.796  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator pos
+2021-12-12 23:09:23.797  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator lemma
+2021-12-12 23:09:23.797  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ner
+2021-12-12 23:09:23.797  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator parse
+2021-12-12 23:09:23.797  INFO 14580 --- [http-nio-8080-exec-6] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator coref
+2021-12-12 23:09:47.152  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Searching for resource: StanfordCoreNLP-chinese.properties ... found.
+2021-12-12 23:09:47.154  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator tokenize
+2021-12-12 23:09:47.155  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ssplit
+2021-12-12 23:09:47.155  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator pos
+2021-12-12 23:09:47.155  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator lemma
+2021-12-12 23:09:47.156  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ner
+2021-12-12 23:09:47.156  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator parse
+2021-12-12 23:09:47.156  INFO 14580 --- [http-nio-8080-exec-7] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator coref
+2021-12-12 23:10:06.342  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Searching for resource: StanfordCoreNLP-chinese.properties ... found.
+2021-12-12 23:10:06.343  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator tokenize
+2021-12-12 23:10:06.343  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ssplit
+2021-12-12 23:10:06.343  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator pos
+2021-12-12 23:10:06.343  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator lemma
+2021-12-12 23:10:06.343  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator ner
+2021-12-12 23:10:06.344  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator parse
+2021-12-12 23:10:06.344  INFO 14580 --- [http-nio-8080-exec-8] e.stanford.nlp.pipeline.StanfordCoreNLP  : Adding annotator coref
