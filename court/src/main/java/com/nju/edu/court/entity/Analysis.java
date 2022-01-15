@@ -60,6 +60,18 @@ public class Analysis {
         return res;
     }
 
+    /**
+     * 对文本进行词性分析
+     */
+    public void analyse() {
+        if (this.paragraph == null) {
+            throw new NullPointerException("The text is null!");
+        }
+
+        List<Term> termList = StandardTokenizer.segment(paragraph);
+        // 根据词性分词
+    }
+
     public static void main(String[] args) {
         System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！"));
         List<Term> termList = StandardTokenizer.segment("商品和服务");
