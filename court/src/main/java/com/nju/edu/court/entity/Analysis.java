@@ -1,9 +1,7 @@
 package com.nju.edu.court.entity;
 
-import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
