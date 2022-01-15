@@ -2,11 +2,11 @@ package com.nju.edu.court.entity;
 
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.tokenizer.NLPTokenizer;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,24 +20,16 @@ public class Analysis {
 
     private String paragraph;
     private Map<String, List<String>> res;
-    private StanfordCoreNLP pipeline;
 
     public Analysis(String paragraph) {
         this.paragraph = paragraph;
         this.res = new HashMap<>();
         System.out.println("the map is init!");
-        init();
     }
 
     public Analysis() {
         this.res = new HashMap<>();
         System.out.println("the map is init!");
-    }
-
-    private void init() {
-        // 加载默认的配置文件
-        // 后续可以根据自己的需求进行修改
-        this.pipeline = new StanfordCoreNLP("StanfordCoreNLP-chinese.properties");
     }
 
     /**
@@ -57,6 +49,9 @@ public class Analysis {
      * @return 完成词性标注后的结果
      */
     public Map<String, List<String>> getRes() {
+        if (res.isEmpty()) {
+            throw new RuntimeException("Result is Empty!");
+        }
         return res;
     }
 
@@ -68,13 +63,42 @@ public class Analysis {
             throw new NullPointerException("The text is null!");
         }
 
-        List<Term> termList = StandardTokenizer.segment(paragraph);
-        // 根据词性分词
+        tokenize();
     }
 
-    public static void main(String[] args) {
-        System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！"));
-        List<Term> termList = StandardTokenizer.segment("商品和服务");
-        System.out.println(termList);
+    private void tokenize() {
+        List<Term> termList = StandardTokenizer.segment(paragraph);
+        // 根据词性分词
+        for (Term term : termList) {
+            if (term.nature.startsWith('n')) {
+                // 名词
+                if (!res.containsKey("noun")) {
+                    List<String> temp = new ArrayList<>();
+                    temp.add(term.word);
+                    res.put("noun", temp);
+                } else {
+                    List<String> temp = res.get("noun");
+                    temp.add(term.word);
+                }
+            } else if (term.nature.startsWith('v')) {
+                if (!res.containsKey("verb")) {
+                    List<String> temp = new ArrayList<>();
+                    temp.add(term.word);
+                    res.put("verb", temp);
+                } else {
+                    List<String> temp = res.get("verb");
+                    temp.add(term.word);
+                }
+            } else if ("a".equals(term.nature.toString())) {
+                if (!res.containsKey("adj")) {
+                    List<String> temp = new ArrayList<>();
+                    temp.add(term.word);
+                    res.put("adj", temp);
+                } else {
+                    List<String> temp = res.get("adj");
+                    temp.add(term.word);
+                }
+            }
+        }
     }
 }
