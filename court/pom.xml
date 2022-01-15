@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.nju.edu</groupId>
     <artifactId>court</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>court</name>
     <description>court</description>
     <properties>
@@ -55,6 +55,12 @@
             <artifactId>stanford-corenlp</artifactId>
             <version>4.2.0</version>
             <classifier>models-chinese</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hankcs</groupId>
+            <artifactId>hanlp</artifactId>
+            <version>portable-1.8.2</version>
         </dependency>
 
         <dependency>
