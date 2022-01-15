@@ -50,4 +50,13 @@ public class AnalysisTest {
         actual = analysis.getRes();
         System.out.println(actual);
     }
+
+    @Test
+    public void test3() {
+        String text = "贵州省高级人民法院";
+        analysis.setParagraph(text);
+        analysis.analyse();
+        actual = analysis.getRes();
+        System.out.println(actual);
+    }
 }

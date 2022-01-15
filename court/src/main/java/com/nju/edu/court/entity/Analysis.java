@@ -70,7 +70,7 @@ public class Analysis {
         List<Term> termList = StandardTokenizer.segment(paragraph);
         // 根据词性分词
         for (Term term : termList) {
-            if (term.nature.startsWith('n')) {
+            if (term.nature.startsWith('n') || "l".equals(term.nature.toString())) {
                 // 名词
                 if (!res.containsKey("noun")) {
                     List<String> temp = new ArrayList<>();
@@ -100,5 +100,17 @@ public class Analysis {
                 }
             }
         }
+    }
+
+    /**
+     * 清除之前分析的内容
+     */
+    public void clear() {
+        this.res.clear();
+    }
+
+    public static void main(String[] args) {
+        List<Term> termList = StandardTokenizer.segment("贵州省高级人民法院");
+        System.out.println(termList);
     }
 }
