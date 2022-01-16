@@ -7,7 +7,11 @@ import org.springframework.boot.origin.Origin;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -59,13 +63,25 @@ public class Controller {
     @CrossOrigin(origins = "*")
     public Map<String, List<String>> uploadFile(@RequestParam("uploadFile") MultipartFile uploadFile) throws IOException {
         if (uploadFile == null) {
+            // 接收失败
             return null;
         }
 
-        String content = Arrays.toString(uploadFile.getBytes());
+        InputStream inputStream = uploadFile.getInputStream();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+        StringBuilder temp = new StringBuilder();
+
+        while (reader.ready()) {
+            temp.append(reader.readLine());
+        }
+
+        // analyse
+        String content = temp.toString();
+        System.out.println(content);
         analysis.clear();
         analysis.setParagraph(content);
         analyse();
+        System.out.println(analysis.getRes());
         return analysis.getRes();
     }
 

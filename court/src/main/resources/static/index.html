@@ -110,7 +110,7 @@
 	    
 	    $(document).keypress(function (e) {
 	        // 回车键事件  
-	        if (e.which == 13) {
+	        if (e.which === 13) {
 	            $('input[type="button"]').click();
 	        }
 	    });
@@ -127,7 +127,7 @@
 	    });
 	    $('input[name="login"],input[name="pwd"]').keyup(function () {
 	        var Len = $(this).val().length;
-	        if (!$(this).val() == '' &amp;&amp; Len >= 5) {
+	        if (!$(this).val() === '' &amp;&amp; Len >= 5) {
 	            $(this).next().animate({
 	                'opacity': '1',
 	                'right': '30'

@@ -12,12 +12,10 @@
         verb : ['审理','指控','认定','判处','剥夺','提出','消灭','处死','击打'],
         adj : ['严重','恶劣','可恶','糟糕'],
     }
-    
-
 
     // 根据NLP分析结果（对象格式），将其中数据以复选框格式创建子节点
     beginAnalyse.onclick = function NLP() {
-        // 将textField内的值传给NLP程序，返回结果赋给words对象			
+        // 将textField内的值传给NLP程序，返回结果赋给words对象
         let textField = document.getElementById('textField');
         let content = textField.value // content即为输入框中的文字，类型为字符串
         let url = "http://localhost:8080/getResult?text=" + content
@@ -30,10 +28,11 @@
             success: function (data) {
                 alert("success");
                 words = data; // 我这边的words是一个对象形式，样例可见本文件10 - 14行
+                console.log(words)
                 formLabels(words)
             }
         })
-    
+
     }
 
     // 根据word的内容动态创建节点
@@ -65,31 +64,51 @@
             }
         }
 
+// 实现点击上传按钮，将文本内容同步到输入框，同时提交文件进行分析
+// todo:如果有需要的话，可以设置一个全局变量theFile，在点击开始分析之后再把数据文件传过去。
+// error:传输过去后分词结果有误
+    function upLoadFile() {
+        var file = document.getElementById("submitLocalFile")
+        var textAera = document.querySelector('#textField')
+        var theFile
+        // 实现将文件的内容显示在文本框内
+        var reader = new FileReader
+        console.log('提交按钮是')
+        console.log(this.file)
+        console.log('提交的所有文件是')
+        console.log(file.files)
+        console.log('提交的文件是')
+        console.log(file.files[0])
+        theFile = file.files[0]
 
-    /*
-        const element = currentArr[index];
-            var checkBox = document.createElement('input');
-            checkBox.setAttribute('type','checkbox');
-            checkBox.setAttribute('value',element); // 设置复选框属性
-            var content = document.createTextNode(element); // 得到复选框后的文本
-            var boxAndConetent = document.createElement('div'); // 创建包含复选框以及文本的小盒子
-            boxAndConetent.setAttribute('class','boxAndConetent');
-            boxAndConetent.appendChild(checkBox).appendChild(content); // 直接给当前盒子加上复选框和文本
-            
-            // 先放在左边再放到右边
-            if(index % 2 == 0){
-               var putedBox = document.querySelector('#noun > .leftOne');
-            }else{
-               var putedBox = document.querySelector('#noun > .rightOne');
+
+        reader.readAsText(file.files[0],'utf-8')
+        reader.onload = function (event) {
+            var data = event.target.result;
+            // console.log(event)
+            // console.log(event.target);
+            // console.log("data is" + data)
+            textAera.innerHTML = data
+        }
+
+        // 实现直接将文件传输到8080端口
+        console.log(theFile)
+        let formdata = new FormData;
+        formdata.append('uploadFile',theFile)
+        console.log(formdata.get('uploadFile'))
+        let url = 'http://localhost:8080/uploadFile'; // todo:根据你的文件来确定url
+
+        jQuery.ajax({
+            type: 'post',
+            url: url,
+            data: formdata,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert("success");
+                console.log(data)
+                words = data; // 我这边的words是一个对象形式，样例可见本文件10 - 14行
+                formLabels(words)
             }
-            putedBox.appendChild(boxAndConetent); // 把小盒子放到左盒子或右盒子
-            // var currentBoxs = document.querySelectorAll('.boxAndConetent');
-            // console.log(currentBoxs)
-            // var currentBox = currentBoxs[currentBoxs.length-1]; // 得到最新加入的盒子
-            
-            // currentBox.appendChild(checkBox).appendChild(content); // 给其加上复选框和文本
-            console.log(boxAndConetent)
-            // checkBox.innerHTML = element[index];
-            // noun.appendChild(checkBox);
-            // noun.appendChild(content); 
-     */
+        })
+    }
