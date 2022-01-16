@@ -20,48 +20,51 @@
         // 将textField内的值传给NLP程序，返回结果赋给words对象			
         let textField = document.getElementById('textField');
         let content = textField.value // content即为输入框中的文字，类型为字符串
-        let url = "http://localhost:8080/getResult?text=" + content;
+        let url = "http://localhost:8080/getResult?text=" + content
         jQuery.ajax({
             type: 'post',
             url: url,
+            // data: content,
             contentType: false,
             processData: false,
             success: function (data) {
                 alert("success");
                 words = data; // 我这边的words是一个对象形式，样例可见本文件10 - 14行
+                formLabels(words)
             }
         })
     
     }
 
     // 根据word的内容动态创建节点
-    for(let key in words){
-        console.log(key)
-        var currentArr = words[key] // 得到当前对应数组
-        var leftUl = document.createElement("ul")
-        var rightUl = document.createElement('ul')
-        // 数组中的每一个词都建一个li，然后挂到对应的ul上
-        for (let index = 0; index < currentArr.length; index++) {
-            var li = document.createElement('li');
-            var checkBox = document.createElement('input')
-            checkBox.setAttribute("type","checkbox");
-            var labelCode = '<label class="markLabels" value="' + currentArr[index] + '">' 
-            var htmlCode = labelCode + ' <input type="checkBox" class="theWords" value="'+currentArr[index]+'">' + currentArr[index] + '</input>' + '</label >'
-            li.innerHTML =htmlCode
-            
-                
-            
-            // li.appendChild(checkBox)
-            
-            if(index % 2 != 1) leftUl.appendChild(li)
-            else rightUl.appendChild(li)
-            
+     function formLabels(words) {
+            for(let key in words){
+                console.log(key)
+                var currentArr = words[key] // 得到当前对应数组
+                var leftUl = document.createElement("ul")
+                var rightUl = document.createElement('ul')
+                // 数组中的每一个词都建一个li，然后挂到对应的ul上
+                for (let index = 0; index < currentArr.length; index++) {
+                    var li = document.createElement('li');
+                    var checkBox = document.createElement('input')
+                    checkBox.setAttribute("type","checkbox");
+                    var labelCode = '<label class="markLabels" value="' + currentArr[index] + '">'
+                    var htmlCode = labelCode + ' <input type="checkBox" class="theWords" value="'+currentArr[index]+'">' + currentArr[index] + '</input>' + '</label >'
+                    li.innerHTML =htmlCode
+
+                  // li.appendChild(checkBox)
+
+                    if(index % 2 != 1) leftUl.appendChild(li)
+                    else rightUl.appendChild(li)
+
+                }
+                var leftBox = document.querySelector('#' + key +'> .leftOne')
+                var rightBox = document.querySelector('#' + key +'> .rightOne')
+                leftBox.appendChild(leftUl)
+                rightBox.appendChild(rightUl)
+            }
         }
-        var leftBox = document.querySelector('#' + key +'> .leftOne')
-        var rightBox = document.querySelector('#' + key +'> .rightOne')
-        leftBox.appendChild(leftUl)
-        rightBox.appendChild(rightUl)
-    }
+
 
     /*
         const element = currentArr[index];
