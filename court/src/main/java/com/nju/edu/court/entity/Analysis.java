@@ -65,6 +65,7 @@ public class Analysis {
     }
 
     private void tokenize() {
+        // TODO: 打造自己的词典，训练自己的模型
         List<Term> termList = StandardTokenizer.segment(paragraph);
         // 根据词性分词
         for (Term term : termList) {
@@ -105,10 +106,5 @@ public class Analysis {
      */
     public void clear() {
         this.res.clear();
-    }
-
-    public static void main(String[] args) {
-        List<Term> termList = StandardTokenizer.segment("贵州省高级人民法院");
-        System.out.println(termList);
     }
 }
