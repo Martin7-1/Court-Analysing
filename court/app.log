@@ -192,3 +192,32 @@
 2022-01-15 21:27:50.426  INFO 7396 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-01-15 21:27:50.426  INFO 7396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-01-15 21:27:50.428  INFO 7396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-16 15:17:08.018  INFO 25948 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 25948 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-16 15:17:08.020  INFO 25948 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-16 15:17:08.522  WARN 25948 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-16 15:17:08.768  INFO 25948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-16 15:17:08.774  INFO 25948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-16 15:17:08.774  INFO 25948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-16 15:17:08.848  INFO 25948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-16 15:17:08.848  INFO 25948 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 796 ms
+2022-01-16 15:17:09.172  INFO 25948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-16 15:17:09.179  INFO 25948 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.622 seconds (JVM running for 2.921)
+2022-01-16 15:17:42.908  INFO 25948 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-16 15:17:42.908  INFO 25948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-16 15:17:42.909  INFO 25948 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-16 15:20:58.189  INFO 25948 --- [http-nio-8080-exec-3] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Request header is too large
+	at org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:790)
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:454)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+

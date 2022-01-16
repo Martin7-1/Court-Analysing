@@ -1,10 +1,14 @@
 package com.nju.edu.court.controller;
 
 import com.nju.edu.court.entity.Analysis;
+import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.origin.Origin;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -38,9 +42,29 @@ public class Controller {
     @CrossOrigin(origins = "*")
     public Map<String, List<String>> sendMessage(@RequestParam(value = "text", defaultValue = "我是一名大学生") String text) {
         // 清除之前的分析内容
-
         analysis.clear();
         analysis.setParagraph(text);
+        analyse();
+        return analysis.getRes();
+    }
+
+    /**
+     * 接受一个文件的传输，返回词法分析的结果
+     * @param uploadFile 用户上传的从前端接收的文件
+     * @return 词法分析的结果
+     * @throws IOException 文件接收异常
+     */
+    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
+    @ResponseBody
+    @CrossOrigin(origins = "*")
+    public Map<String, List<String>> uploadFile(@RequestParam("uploadFile") MultipartFile uploadFile) throws IOException {
+        if (uploadFile == null) {
+            return null;
+        }
+
+        String content = Arrays.toString(uploadFile.getBytes());
+        analysis.clear();
+        analysis.setParagraph(content);
         analyse();
         return analysis.getRes();
     }
