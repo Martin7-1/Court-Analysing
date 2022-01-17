@@ -17,7 +17,7 @@ import java.util.Map;
 public class Analysis {
 
     private String paragraph;
-    private Map<String, List<String>> res;
+    private final Map<String, List<String>> res;
     private boolean isUniqueMode;
 
     public Analysis(String paragraph) {
@@ -39,6 +39,10 @@ public class Analysis {
         return paragraph;
     }
 
+    /**
+     * 设置要分析的文本
+     * @param paragraph 文本
+     */
     public void setParagraph(String paragraph) {
         this.paragraph = paragraph;
     }
@@ -47,6 +51,12 @@ public class Analysis {
         return isUniqueMode;
     }
 
+    /**
+     * 设置要分析的模式，目前有两种模式
+     * 1. 分词模式，将文书按照词性进行分词
+     * 2. 标注模式，能够将文书自动标注出当事人等
+     * @param uniqueMode true，标注模式；false，分词模式
+     */
     public void setAnalysisMode(boolean uniqueMode) {
         isUniqueMode = uniqueMode;
     }

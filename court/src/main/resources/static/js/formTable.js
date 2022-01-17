@@ -18,11 +18,13 @@
         // 将textField内的值传给NLP程序，返回结果赋给words对象
         let textField = document.getElementById('textField');
         let content = textField.value; // content即为输入框中的文字，类型为字符串
+        let formdata = new FormData;
+        formdata.append('text', content)
         let url = "http://localhost:8080/getResult";
         jQuery.ajax({
             type: 'post',
             url: url,
-            data: content,
+            data: formdata,
             contentType: false,
             processData: false,
             success: function (data) {
