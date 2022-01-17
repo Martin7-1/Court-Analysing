@@ -1,10 +1,10 @@
 var ar = document.getElementById('differentPro');
 var btns = ar.getElementsByTagName('input');
 var labels = document.getElementsByClassName('markLabels')
-console.log("分析之前的标签是")
-console.log(labels)
 var beginAnalyse = document.getElementById('beginAnalyse');
 var currentPro = "none";
+var fileth = 1; // 当前分析的文件的序号，用于点击保存按钮后调用autoNLP函数的参数
+var toTheEnd = 0;// 判断fileth是否到达文件末尾，到达则赋值负1
 var markObject = {
     '当事人 ':[],
 
@@ -22,10 +22,10 @@ var markObject = {
 
 // 控制时序，在NLP分析得到新的标签后重新获取，绑定事件
 function afterAnalyse() {
-    console.log("这是开始分析按钮绑定的第二个事件")
+    // console.log("这是开始分析按钮绑定的第二个事件")
     labels = document.getElementsByClassName('markLabels')
-    console.log("分析之后的标签是")
-    console.log(labels)
+    // console.log("分析之后的标签是")
+    // console.log(labels)
     // 获取当前点击的标签，根据用户选择动态修改markObject对象内容
   for (let index = 0; index < labels.length; index++) {
     const currentLabel = labels[index];
@@ -33,7 +33,18 @@ function afterAnalyse() {
         var str;
         if(event.pointerId == 1){
             console.log("---------------------")
-            str = removeHtml(event.target.innerHTML) // 这个str就是其对应的值
+            // console.log("the event is ")
+            // console.log(event)
+            // console.log("the event target is" )
+            // console.log(event.target)
+            // console.log("the event target'value is" )
+            // console.log(event.target.value)
+            // console.log('the innerHTML is '+event.target.innerHTML)
+            if (event.target.value) {
+                str = event.target.value
+            }else{
+                str = removeHtml(event.target.innerHTML) // 这个str就是其对应的值
+            }
             console.log('currentPro:'+currentPro+';')
             console.log('currentLabel:' + str + ';')
             // 遍历对象，找到需要添加的数组
@@ -59,23 +70,23 @@ function afterAnalyse() {
                                 markObject[k] = newArr;
                                 console.log('the updated Arr is:'+markObject[k])
                                 console.log('the updated object is:')
-                                console.log(markObject)    
-                            }    
+                                console.log(markObject)
+                            }
                         }
-                        
+
                     }
                     if (!isDelete) {
                         console.log('接下来进行增添操作');
                         markObject[key].push(str);
                         console.log('the updated object is:')
-                        console.log(markObject)    
+                        console.log(markObject)
                     }
-                    
+
                 }
-                
-            } 
+
+            }
         }
-    }    
+    }
   }
 }
 
@@ -86,7 +97,7 @@ function afterAnalyse() {
         for (let index = 0; index < btns.length; index++) {
             const element = btns[index];
             element.style.borderBottomColor = '#61BFFF';
-            
+
         }
         btns[i].style.borderBottomColor = 'red';
         currentPro = btns[i].value;
@@ -97,12 +108,12 @@ function afterAnalyse() {
         for (let index = 0; index < allLables.length; index++) {
             const currentLab = allLables[index];
             currentLab.checked = false;
-            
+
         }
         // 再根据markObject中的值进行恢复
         for (let index = 0; index < allLables.length; index++) {
             const currentLab = allLables[index];
-            let curArr 
+            let curArr
             for(let k in markObject){
                 if (currentPro == k) {
                     curArr = markObject[k]; // 当前pro下对应的数组，根据其内数据恢复标签状态
@@ -114,26 +125,26 @@ function afterAnalyse() {
                     break;
                 }
             }
-        
 
-            
-            
+
+
+
         }
         // console.log('currentPro:' + currentPro + ';');
-        
+
     }
   }
 
-  
+
   function removeHtml(Htmlstring) {
     let index = 0
     for (let i = 0; i < Htmlstring.length; i++) {
-        
+
         if (Htmlstring[i] == '>') {
             index = i+1
             break
         }
-        
+
     }
     return Htmlstring.substring(index)
 
@@ -156,8 +167,14 @@ function afterAnalyse() {
     var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
     let textContent = JSON.stringify(textField.value)
     let textBlob = new Blob([textContent],{type: "text/plain;charset=utf-8"})
-    download('mark.json',blob)
-    download('content.txt',textContent)
+    if (toTheEnd != -1) {
+        download('mark'+fileth+'.json',blob)
+        download('content'+fileth+'.txt',textContent)
+        console.log("当前保存的文件是:file" + (fileth-1))
+        console.log("接下来分析的文件是" + fileth)
+        toTheEnd = autoNLP(fileth)
+        fileth = fileth + 1;
+    }
   }
 
   function fake_click(obj) {
@@ -178,3 +195,6 @@ function afterAnalyse() {
     save_link.download = name;
     fake_click(save_link);
   }
+
+
+

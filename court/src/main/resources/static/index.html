@@ -5,11 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0"> 
+    <meta http-equiv="expires" content="0">
 	<title>司法数据分析界面</title>
     <link href="css/default.css" rel="stylesheet" type="text/css" />
 	<!-- 导入jquery库 -->
@@ -29,10 +29,10 @@
 
 	  <div class="login_fields__submit" id="submitFile">
 		  <input type="button" value="上传文件" style="position: relative;">
-		<input type='file'  value='上传文件' id="submitLocalFile" style="position: absolute;" onchange="upLoadFile()">
+		<input type='file'  value='上传文件' id="submitLocalFile" style="position: absolute;" onchange="upLoadFile()" multiple>
 		<input type='button' value='开始分析' id="beginAnalyse">
 		<br>
-		<textarea name="" id="textField" cols="73" rows="10"></textarea>
+		<textarea name="" id="textField" cols="73" rows="10">单个文件大小≤10MB</textarea>
 	  </div>
 
 	  <div class="login_fields" id="analysedResult">
@@ -50,29 +50,29 @@
 				<span>名词</span>
 				<br>
 					<div class="leftOne">
-																	
+
 					</div>
 
 					<div class="rightOne">
-						
+
 					</div>
 			</div>
-			
+
 			<div id="verb">
 				<span>动词</span>
 				<br>
 
-				<div class="leftOne">											
+				<div class="leftOne">
 				</div>
 
-				<div class="rightOne">					
+				<div class="rightOne">
 				</div>
 			</div>
 			<br>
 			<div id="adj">
 				<span>形容词</span>
 				<br>
-				<div class="leftOne">										
+				<div class="leftOne">
 				</div>
 
 				<div class="rightOne">
@@ -85,11 +85,11 @@
 	  <div class='success'>
 	  </div>
 	  <div class="login_fields__submit" id="store">
-		<input type='button' value='保存案件与标注' style="text-align: center;" id="save",>
-	  </div>  
+		<input type='button' value='保存案件与标注' style="text-align: center;" id="save">
+	  </div>
 	</div>
-	
-	
+
+
     <link href="layui/css/layui.css" rel="stylesheet" type="text/css" />
 	<script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.js"></script> <!-- 这个js文件用于生成json文件-->
 	<script src="js/formMarkfIle.js"></script>
@@ -105,9 +105,9 @@
 		console.log("-------------------------")
 		var canGetCookie = 0;//是否支持存储Cookie 0 不支持 1 支持
 		var ajaxmockjax = 1;//是否启用虚拟Ajax的请求响 0 不启用  1 启用
-	    
+
 	    $(document).keypress(function (e) {
-	        // 回车键事件  
+	        // 回车键事件
 	        if (e.which === 13) {
 	            $('input[type="button"]').click();
 	        }
@@ -139,18 +139,18 @@
 	    });
 	    var open = 0;
 		if(ajaxmockjax == 1){
-			$.mockjax({  
-				url: 'Ajax/Login',  
-				status: 200,  
-				responseTime: 50,          
+			$.mockjax({
+				url: 'Ajax/Login',
+				status: 200,
+				responseTime: 50,
 				responseText: {"Status":"ok","Text":"登陆成功 &lt;br/> &lt;br/> 欢迎回来"}
-			}); 
-			$.mockjax({  
-				url: 'Ajax/LoginFalse',  
-				status: 200,  
-				responseTime: 50,          
+			});
+			$.mockjax({
+				url: 'Ajax/LoginFalse',
+				status: 200,
+				responseTime: 50,
 				responseText: {"Status":"Erro","Erro":"账号名或密码或验证码有误"}
-			});   
+			});
 		}
     </script>
 </body>
