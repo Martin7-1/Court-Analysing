@@ -1,8 +1,9 @@
-
-
 var ar = document.getElementById('differentPro');
 var btns = ar.getElementsByTagName('input');
 var labels = document.getElementsByClassName('markLabels')
+console.log("分析之前的标签是")
+console.log(labels)
+var beginAnalyse = document.getElementById('beginAnalyse');
 var currentPro = "none";
 var markObject = {
     '当事人 ':[],
@@ -19,52 +20,13 @@ var markObject = {
 
 };
 
-  // 实现标注栏切换效果,根据markObject中的值，来确定各个标注下的标签的初始状态
-  for (let i = 0; i < btns.length; i++) {
-    console.log(btns[0].value);
-    btns[i].onclick = function () {
-        for (let index = 0; index < btns.length; index++) {
-            const element = btns[index];
-            element.style.borderBottomColor = '#61BFFF';
-            
-        }
-        btns[i].style.borderBottomColor = 'red';
-        currentPro = btns[i].value;
-        var allLables = document.getElementsByClassName('theWords')
-        // console.log('all the labels are:')
-        // console.log(allLables);
-        // 先全部清除
-        for (let index = 0; index < allLables.length; index++) {
-            const currentLab = allLables[index];
-            currentLab.checked = false;
-            
-        }
-        // 再根据markObject中的值进行恢复
-        for (let index = 0; index < allLables.length; index++) {
-            const currentLab = allLables[index];
-            let curArr 
-            for(let k in markObject){
-                if (currentPro == k) {
-                    curArr = markObject[k]; // 当前pro下对应的数组，根据其内数据恢复标签状态
-                }
-            }
-            for(let i=0; i<curArr.length; i++){
-                if (currentLab.value == curArr[i]) {
-                    currentLab.checked = true
-                    break;
-                }
-            }
-        
-
-            
-            
-        }
-        // console.log('currentPro:' + currentPro + ';');
-        
-    }
-  }
-
-  // 获取当前点击的标签，根据用户选择动态修改markObject对象内容
+// 控制时序，在NLP分析得到新的标签后重新获取，绑定事件
+function afterAnalyse() {
+    console.log("这是开始分析按钮绑定的第二个事件")
+    labels = document.getElementsByClassName('markLabels')
+    console.log("分析之后的标签是")
+    console.log(labels)
+    // 获取当前点击的标签，根据用户选择动态修改markObject对象内容
   for (let index = 0; index < labels.length; index++) {
     const currentLabel = labels[index];
     currentLabel.onclick = function (event) {
@@ -113,13 +75,56 @@ var markObject = {
                 
             } 
         }
+    }    
+  }
+}
+
+  // 实现标注栏切换效果,根据markObject中的值，来确定各个标注下的标签的初始状态
+  for (let i = 0; i < btns.length; i++) {
+    console.log(btns[0].value);
+    btns[i].onclick = function () {
+        for (let index = 0; index < btns.length; index++) {
+            const element = btns[index];
+            element.style.borderBottomColor = '#61BFFF';
+            
+        }
+        btns[i].style.borderBottomColor = 'red';
+        currentPro = btns[i].value;
+        var allLables = document.getElementsByClassName('theWords')
+        // console.log('all the labels are:')
+        // console.log(allLables);
+        // 先全部清除
+        for (let index = 0; index < allLables.length; index++) {
+            const currentLab = allLables[index];
+            currentLab.checked = false;
+            
+        }
+        // 再根据markObject中的值进行恢复
+        for (let index = 0; index < allLables.length; index++) {
+            const currentLab = allLables[index];
+            let curArr 
+            for(let k in markObject){
+                if (currentPro == k) {
+                    curArr = markObject[k]; // 当前pro下对应的数组，根据其内数据恢复标签状态
+                }
+            }
+            for(let i=0; i<curArr.length; i++){
+                if (currentLab.value == curArr[i]) {
+                    currentLab.checked = true
+                    break;
+                }
+            }
         
 
+            
+            
+        }
+        // console.log('currentPro:' + currentPro + ';');
+        
     }
-
-    
-    
   }
+
+  
   function removeHtml(Htmlstring) {
     let index = 0
     for (let i = 0; i < Htmlstring.length; i++) {
@@ -173,7 +178,3 @@ var markObject = {
     save_link.download = name;
     fake_click(save_link);
   }
-
-  
-
-    
