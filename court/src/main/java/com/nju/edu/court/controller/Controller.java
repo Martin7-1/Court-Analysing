@@ -84,6 +84,20 @@ public class Controller {
     }
 
     /**
+     * 接收多个文件的传输，返回词法分析的结果
+     * @param uploadFiles 用户上传的从前端接收的文件
+     * @return 多个文件词法分析的结果，以数组形式返回
+     * @throws IOException 文件接收或传输异常
+     */
+    @RequestMapping(value = "/uploadFiles", method = RequestMethod.POST)
+    @ResponseBody
+    @CrossOrigin(origins = "*")
+    public Map<String, List<String>>[] uploadMultiFile(@RequestParam("uploadFiles") MultipartFile[] uploadFiles) throws IOException {
+        // TODO
+        return null;
+    }
+
+    /**
      * 设置分析模式
      * @param isUniqueAnalysis 是否是精确分析
      */

@@ -72,7 +72,7 @@
 
     }
 
-    formLabels(words)
+    // formLabels(words)
     // 根据word的内容动态创建节点
     function formLabels(words) {
         for(let key in words){
