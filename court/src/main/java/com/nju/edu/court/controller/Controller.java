@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 控制类，进行与前端的数据传输和对Bean的控制
  * @author Zyi
  */
 @RestController
@@ -82,10 +83,15 @@ public class Controller {
         return analysis.getRes();
     }
 
+    /**
+     * 设置分析模式
+     * @param isUniqueAnalysis 是否是精确分析
+     */
     @RequestMapping(value = "/setAnalysisMode", method = RequestMethod.POST)
     @ResponseBody
     @CrossOrigin(origins = "*")
     public void setAnalysisMode(@RequestParam("isUniqueAnalysis") boolean isUniqueAnalysis) {
+        // 设置分析模式
         this.analysis.setAnalysisMode(isUniqueAnalysis);
     }
 

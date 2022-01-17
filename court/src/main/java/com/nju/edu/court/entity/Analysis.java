@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 分析类
+ * 分析类，对文本进行分析
  * @author Zyi
  */
 @Component

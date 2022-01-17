@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.hankcs</groupId>
             <artifactId>hanlp</artifactId>
-            <version>portable-1.8.2</version>
+            <version>portable-1.7.8</version>
         </dependency>
 
         <dependency>
@@ -58,6 +58,7 @@
             <artifactId>guava</artifactId>
             <version>23.0</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>

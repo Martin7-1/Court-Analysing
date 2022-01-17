@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * duplicate 目前没有任何作用
  * @author Zyi
  */
 public class Reptile {
