@@ -1,5 +1,6 @@
 package com.nju.edu.court.entity;
 
+import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import org.junit.Before;
@@ -53,10 +54,31 @@ public class AnalysisTest {
 
     @Test
     public void test3() {
+        HanLP.Config.enableDebug();
         String text = "贵州省高级人民法院";
         analysis.setParagraph(text);
         analysis.analyse();
         actual = analysis.getRes();
         System.out.println(actual);
+    }
+
+    @Test
+    public void test4() {
+        String text = "宣武区";
+        analysis.setParagraph(text);
+        analysis.analyse();
+        actual = analysis.getRes();
+        System.out.println(actual);
+    }
+
+    @Test
+    public void test5() {
+        HanLP.Config.enableDebug();
+        String text = "分裂国家罪";
+        analysis.setParagraph(text);
+        analysis.analyse();
+        actual = analysis.getRes();
+        System.out.println(actual);
+        System.out.println(HanLP.segment("分裂国家罪"));
     }
 }

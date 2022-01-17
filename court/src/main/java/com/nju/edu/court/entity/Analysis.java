@@ -1,5 +1,6 @@
 package com.nju.edu.court.entity;
 
+import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import org.springframework.stereotype.Component;
@@ -84,7 +85,6 @@ public class Analysis {
     }
 
     private void tokenize() {
-        // TODO: 打造自己的词典，训练自己的模型
         List<Term> termList = StandardTokenizer.segment(paragraph);
         // 根据词性分词
         for (Term term : termList) {
