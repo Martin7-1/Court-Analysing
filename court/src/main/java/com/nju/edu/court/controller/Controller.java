@@ -82,6 +82,13 @@ public class Controller {
         return analysis.getRes();
     }
 
+    @RequestMapping(value = "/setAnalysisMode", method = RequestMethod.POST)
+    @ResponseBody
+    @CrossOrigin(origins = "*")
+    public void setAnalysisMode(@RequestParam("isUniqueAnalysis") boolean isUniqueAnalysis) {
+        this.analysis.setAnalysisMode(isUniqueAnalysis);
+    }
+
     private void analyse() {
         this.analysis.analyse();
     }

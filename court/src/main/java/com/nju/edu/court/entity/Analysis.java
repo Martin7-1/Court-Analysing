@@ -18,6 +18,7 @@ public class Analysis {
 
     private String paragraph;
     private Map<String, List<String>> res;
+    private boolean isUniqueMode;
 
     public Analysis(String paragraph) {
         this.paragraph = paragraph;
@@ -40,6 +41,14 @@ public class Analysis {
 
     public void setParagraph(String paragraph) {
         this.paragraph = paragraph;
+    }
+
+    public boolean isUniqueMode() {
+        return isUniqueMode;
+    }
+
+    public void setAnalysisMode(boolean uniqueMode) {
+        isUniqueMode = uniqueMode;
     }
 
     /**
