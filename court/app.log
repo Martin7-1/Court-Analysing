@@ -351,3 +351,8 @@ java.lang.IllegalArgumentException: Request header is too large
 2022-01-17 17:17:14.427  WARN 8924 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
 2022-01-17 17:17:15.071  INFO 8924 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
 2022-01-17 17:17:15.467  INFO 8924 --- [main] com.nju.edu.court.CourtApplicationTests  : Started CourtApplicationTests in 1.919 seconds (JVM running for 2.973)
+2022-01-17 17:33:22.151  INFO 19724 --- [main] com.nju.edu.court.CourtApplicationTests  : Starting CourtApplicationTests using Java 1.8.0_301 on Zyi with PID 19724 (started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-17 17:33:22.152  INFO 19724 --- [main] com.nju.edu.court.CourtApplicationTests  : No active profile set, falling back to default profiles: default
+2022-01-17 17:33:22.701  WARN 19724 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-17 17:33:23.416  INFO 19724 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-17 17:33:23.814  INFO 19724 --- [main] com.nju.edu.court.CourtApplicationTests  : Started CourtApplicationTests in 2.047 seconds (JVM running for 2.882)

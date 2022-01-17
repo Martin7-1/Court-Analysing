@@ -54,7 +54,6 @@ public class AnalysisTest {
 
     @Test
     public void test3() {
-        HanLP.Config.enableDebug();
         String text = "贵州省高级人民法院";
         analysis.setParagraph(text);
         analysis.analyse();
@@ -73,7 +72,6 @@ public class AnalysisTest {
 
     @Test
     public void test5() {
-        HanLP.Config.enableDebug();
         String text = "分裂国家罪";
         analysis.setParagraph(text);
         analysis.analyse();
