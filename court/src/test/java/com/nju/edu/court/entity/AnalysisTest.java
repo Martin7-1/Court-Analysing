@@ -1,13 +1,10 @@
 package com.nju.edu.court.entity;
 
 import com.hankcs.hanlp.HanLP;
-import com.hankcs.hanlp.seg.common.Term;
-import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +74,14 @@ public class AnalysisTest {
         analysis.analyse();
         actual = analysis.getRes();
         System.out.println(actual);
-        System.out.println(HanLP.segment("分裂国家罪"));
+    }
+
+    @Test
+    public void test6() {
+        String text = "颠覆国家政权罪";
+        analysis.setParagraph(text);
+        analysis.analyse();
+        actual = analysis.getRes();
+        System.out.println(actual);
     }
 }
