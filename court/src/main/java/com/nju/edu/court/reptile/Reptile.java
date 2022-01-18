@@ -33,7 +33,7 @@ public class Reptile {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
 
-        String url = "https://wenshu.court.gov.cn/";
+        String url = "https://anli.court.gov.cn/";
         try {
             driver.get(url);
             // 登录
