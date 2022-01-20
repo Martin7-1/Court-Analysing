@@ -46,12 +46,16 @@ public class Reptile {
         try {
             driver.get(url);
             // 点击参考性案例
-            WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/ul/li[3]"));
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/ul/li[3]")));
-            clickButton(search);
+            WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[1]"));
+            search.sendKeys(searchContent);
+            WebElement searchButton = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]"));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]")));
+            clickButton(searchButton);
+
             WebElement button = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]"));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]")));
             clickButton(button);
+
             WebElement text = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p"));
             System.out.println("get content!");
             List<WebElement> list = new ArrayList<>();
