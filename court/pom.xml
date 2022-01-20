@@ -10,12 +10,15 @@
     </parent>
     <groupId>com.nju.edu</groupId>
     <artifactId>court</artifactId>
+    <packaging>jar</packaging>
     <version>0.1.0</version>
     <name>court</name>
     <description>court</description>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

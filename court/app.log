@@ -73,3 +73,50 @@
 2022-01-18 17:01:31.035  INFO 20076 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-01-18 17:01:31.036  INFO 20076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-01-18 17:01:31.037  INFO 20076 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-19 14:57:57.803  INFO 2560 --- [main] com.nju.edu.court.CourtApplicationTests  : Starting CourtApplicationTests using Java 1.8.0_301 on Zyi with PID 2560 (started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-19 14:57:57.846  INFO 2560 --- [main] com.nju.edu.court.CourtApplicationTests  : No active profile set, falling back to default profiles: default
+2022-01-19 14:57:58.341  WARN 2560 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-19 14:57:58.924  INFO 2560 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-19 14:57:59.080  WARN 2560 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-01-19 14:57:59.356  INFO 2560 --- [main] com.nju.edu.court.CourtApplicationTests  : Started CourtApplicationTests in 1.899 seconds (JVM running for 2.984)
+2022-01-20 12:33:54.916  INFO 16752 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 16752 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-20 12:33:54.931  INFO 16752 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-20 12:33:55.482  WARN 16752 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-20 12:33:55.760  INFO 16752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-20 12:33:55.768  INFO 16752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-20 12:33:55.768  INFO 16752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-20 12:33:55.839  INFO 16752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-20 12:33:55.839  INFO 16752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 876 ms
+2022-01-20 12:33:56.136  INFO 16752 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-20 12:33:56.359  INFO 16752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-20 12:33:56.368  INFO 16752 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 2.091 seconds (JVM running for 3.368)
+2022-01-20 12:34:02.775  INFO 16752 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-20 12:34:02.776  INFO 16752 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-20 12:34:02.777  INFO 16752 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-20 12:35:16.844  INFO 5236 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 5236 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-20 12:35:16.846  INFO 5236 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-20 12:35:17.280  WARN 5236 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-20 12:35:17.495  INFO 5236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-20 12:35:17.502  INFO 5236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-20 12:35:17.502  INFO 5236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-20 12:35:17.568  INFO 5236 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-20 12:35:17.568  INFO 5236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 689 ms
+2022-01-20 12:35:17.719  INFO 5236 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-20 12:35:17.759  WARN 5236 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-01-20 12:35:17.881  INFO 5236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-20 12:35:17.889  INFO 5236 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.373 seconds (JVM running for 2.115)
+2022-01-20 12:35:46.337  INFO 18360 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 18360 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-20 12:35:46.348  INFO 18360 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-20 12:35:46.786  WARN 18360 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-20 12:35:47.005  INFO 18360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-20 12:35:47.011  INFO 18360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-20 12:35:47.011  INFO 18360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-20 12:35:47.078  INFO 18360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-20 12:35:47.079  INFO 18360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 692 ms
+2022-01-20 12:35:47.234  INFO 18360 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-20 12:35:47.272  WARN 18360 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-01-20 12:35:47.399  INFO 18360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-20 12:35:47.406  INFO 18360 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 1.393 seconds (JVM running for 2.151)
+2022-01-20 12:35:50.511  INFO 18360 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-20 12:35:50.511  INFO 18360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-20 12:35:50.512  INFO 18360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
