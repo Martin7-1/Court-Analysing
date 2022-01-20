@@ -21,7 +21,7 @@ public class Reptile {
     private static WebDriver driver;
     private static WebDriverWait wait;
 
-    public void reptile() {
+    public String reptile() {
         ChromeOptions options = new ChromeOptions();
         List<String> arguments = initOptions();
         options.addArguments(arguments);
@@ -33,53 +33,38 @@ public class Reptile {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
 
-        String url = "https://anli.court.gov.cn/";
+        StringBuilder content = new StringBuilder();
+
+        String url = "https://anli.court.gov.cn/static/web/index.html#/index";
         try {
             driver.get(url);
-            // 登录
-            login();
-            // 点击刑事案件
-            // WebElement criminalCase = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[2]/diy:lawyee/div/ul/li[2]/a"));
-            // clickButton(criminalCase);
+            // 点击参考性案例
+            WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/ul/li[3]"));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/ul/li[3]")));
+            clickButton(search);
+            WebElement button = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]"));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]")));
+            clickButton(button);
+            WebElement text = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p"));
+            System.out.println("get content!");
+            List<WebElement> list = new ArrayList<>();
+            list.add(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p")));
+            list.addAll(text.findElements(By.tagName("p")));
+            System.out.println("get list!");
 
-            // 搜索栏
-            WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[3]/diy:lawyee/div/div[1]/div[2]/input"));
-            search.clear();
-            search.sendKeys("抢劫");
-            WebElement searchButton = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[3]/diy:lawyee/div/div[1]/div[2]/input"));
-            clickButton(searchButton);
+            for (WebElement element : list) {
+                content.append(element.getText());
+            }
         } catch (InterruptedException e) {
             System.err.println("sleep interrupted!");
         } finally {
             driver.close();
         }
+
+        return content.toString();
     }
 
     private void clickButton(WebElement button) throws InterruptedException {
-        button.click();
-    }
-
-    private void login() throws InterruptedException {
-        // 登录界面
-        WebElement login = driver.findElement(By.xpath("/html/body/div[1]/div[2]/ul/li[1]/a"));
-        System.out.println(login.getText());
-        // 点击登录界面
-        login.click();
-
-        // 刷新
-        driver.navigate().refresh();
-        driver.navigate().refresh();
-        // 登录界面在一个iframe上，需要切换到iframe
-        WebElement iframe = driver.findElement(By.tagName("iframe"));
-        driver.switchTo().frame(iframe);
-        WebElement userName = driver.findElement(By.xpath("/html/body/div[2]/div/form/div/div[1]/div/div/div/input"));
-        // 首先清空输入栏
-        userName.clear();
-        userName.sendKeys("15859579166");
-        WebElement password = driver.findElement(By.xpath("/html/body/div[2]/div/form/div/div[2]/div/div/div/input"));
-        password.clear();
-        password.sendKeys("Zzzyi123456");
-        WebElement button = driver.findElement(By.xpath("/html/body/div[2]/div/form/div/div[3]/span"));
         button.click();
     }
 
@@ -92,7 +77,7 @@ public class Reptile {
         // 最大化页面
         res.add("--start-maximized");
         // 不显示页面
-        // res.add("--headless");
+        res.add("--headless");
         // Chrome需要的操作
         res.add("--disable-gpu");
         // 不显示图片，加快加载速度
@@ -102,6 +87,7 @@ public class Reptile {
     }
 
     public static void main(String[] args) throws Exception {
-        new Reptile().reptile();
+        String res = new Reptile().reptile();
+        System.out.println(res);
     }
 }

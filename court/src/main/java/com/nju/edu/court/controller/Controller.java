@@ -109,6 +109,13 @@ public class Controller {
         this.analysis.setAnalysisMode(isUniqueAnalysis);
     }
 
+    @RequestMapping(value = "/reptile", method = RequestMethod.POST)
+    @ResponseBody
+    @CrossOrigin(origins = "*")
+    public String reptile(@RequestParam("searchContent") String searchContent) {
+
+    }
+
     private void analyse() {
         this.analysis.analyse();
     }
