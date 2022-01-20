@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +17,18 @@ import java.util.concurrent.TimeUnit;
  * duplicate 目前没有任何作用
  * @author Zyi
  */
+@Component
 public class Reptile {
 
     private static WebDriver driver;
     private static WebDriverWait wait;
 
-    public String reptile() {
+    /**
+     * 根据关键词进行搜索，并爬取第一个文书
+     * @param searchContent 关键词搜索
+     * @return 爬取到的文书
+     */
+    public String reptile(String searchContent) {
         ChromeOptions options = new ChromeOptions();
         List<String> arguments = initOptions();
         options.addArguments(arguments);
@@ -87,7 +94,7 @@ public class Reptile {
     }
 
     public static void main(String[] args) throws Exception {
-        String res = new Reptile().reptile();
+        String res = new Reptile().reptile("合同");
         System.out.println(res);
     }
 }

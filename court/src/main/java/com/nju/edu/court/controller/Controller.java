@@ -1,6 +1,7 @@
 package com.nju.edu.court.controller;
 
 import com.nju.edu.court.entity.Analysis;
+import com.nju.edu.court.reptile.Reptile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,6 +23,8 @@ public class Controller {
 
     @Autowired
     private Analysis analysis;
+    @Autowired
+    private Reptile reptile;
 
     @GetMapping()
     public String init() {
@@ -109,11 +112,16 @@ public class Controller {
         this.analysis.setAnalysisMode(isUniqueAnalysis);
     }
 
+    /**
+     * 爬取文书内容
+     * @param searchContent 搜索的关键词信息
+     * @return 文本内容
+     */
     @RequestMapping(value = "/reptile", method = RequestMethod.POST)
     @ResponseBody
     @CrossOrigin(origins = "*")
     public String reptile(@RequestParam("searchContent") String searchContent) {
-
+        return reptile.reptile(searchContent);
     }
 
     private void analyse() {
