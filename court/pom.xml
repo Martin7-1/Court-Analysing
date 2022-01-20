@@ -11,7 +11,7 @@
     <groupId>com.nju.edu</groupId>
     <artifactId>court</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.0</version>
+    <version>0.1.2</version>
     <name>court</name>
     <description>court</description>
 

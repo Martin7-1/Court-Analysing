@@ -120,3 +120,10 @@
 2022-01-20 12:35:50.511  INFO 18360 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-01-20 12:35:50.511  INFO 18360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-01-20 12:35:50.512  INFO 18360 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-20 15:04:02.287  INFO 18528 --- [main] com.nju.edu.court.CourtApplicationTests  : Starting CourtApplicationTests using Java 1.8.0_301 on Zyi with PID 18528 (started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-20 15:04:02.288  INFO 18528 --- [main] com.nju.edu.court.CourtApplicationTests  : No active profile set, falling back to default profiles: default
+2022-01-20 15:04:02.770  WARN 18528 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-20 15:04:05.162  INFO 18528 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-01-20 15:04:05.699  INFO 18528 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-20 15:04:05.864  WARN 18528 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-01-20 15:04:06.128  INFO 18528 --- [main] com.nju.edu.court.CourtApplicationTests  : Started CourtApplicationTests in 4.207 seconds (JVM running for 5.699)
