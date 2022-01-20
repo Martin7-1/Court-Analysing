@@ -22,13 +22,10 @@ public class Reptile {
 
     private static WebDriver driver;
     private static WebDriverWait wait;
+    private static final String URL = "https://anli.court.gov.cn/static/web/index.html#/index";
+    private StringBuilder content;
 
-    /**
-     * 根据关键词进行搜索，并爬取第一个文书
-     * @param searchContent 关键词搜索
-     * @return 爬取到的文书
-     */
-    public String reptile(String searchContent) {
+    public Reptile() {
         ChromeOptions options = new ChromeOptions();
         List<String> arguments = initOptions();
         options.addArguments(arguments);
@@ -39,12 +36,23 @@ public class Reptile {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
+        content = new StringBuilder();
+    }
 
-        StringBuilder content = new StringBuilder();
+    /**
+     * 清空文书的内容
+     */
+    public void clearContent() {
+        this.content.delete(0, content.length());
+    }
 
-        String url = "https://anli.court.gov.cn/static/web/index.html#/index";
+    /**
+     * 根据关键词进行搜索，并爬取第一个文书
+     * @param searchContent 关键词搜索
+     */
+    public void reptile(String searchContent) {
         try {
-            driver.get(url);
+            driver.get(URL);
             // 点击参考性案例
             WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[1]"));
             search.sendKeys(searchContent);
@@ -66,16 +74,20 @@ public class Reptile {
             for (WebElement element : list) {
                 content.append(element.getText());
             }
-        } catch (InterruptedException e) {
-            System.err.println("sleep interrupted!");
         } finally {
             driver.close();
         }
+    }
 
+    /**
+     * 获得文书内容
+     * @return 文书内容
+     */
+    public String getContent() {
         return content.toString();
     }
 
-    private void clickButton(WebElement button) throws InterruptedException {
+    private void clickButton(WebElement button) {
         button.click();
     }
 

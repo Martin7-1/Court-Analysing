@@ -121,7 +121,9 @@ public class Controller {
     @ResponseBody
     @CrossOrigin(origins = "*")
     public String reptile(@RequestParam("searchContent") String searchContent) {
-        return reptile.reptile(searchContent);
+        reptile.clearContent();
+        reptile.reptile(searchContent);
+        return reptile.getContent();
     }
 
     private void analyse() {
