@@ -96,9 +96,4 @@ public class Reptile {
 
         return res;
     }
-
-    public static void main(String[] args) throws Exception {
-        String res = new Reptile().reptile("合同");
-        System.out.println(res);
-    }
 }
