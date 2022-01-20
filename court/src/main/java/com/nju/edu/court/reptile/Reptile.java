@@ -30,7 +30,7 @@ public class Reptile {
         List<String> arguments = initOptions();
         options.addArguments(arguments);
 
-        String driverPath = "D:\\Java\\chromedriver.exe";
+        String driverPath = "src/main/resources/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", driverPath);
         System.out.println("webdriver path: " + driverPath);
         driver = new ChromeDriver(options);

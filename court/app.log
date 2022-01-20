@@ -127,3 +127,19 @@
 2022-01-20 15:04:05.699  INFO 18528 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
 2022-01-20 15:04:05.864  WARN 18528 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
 2022-01-20 15:04:06.128  INFO 18528 --- [main] com.nju.edu.court.CourtApplicationTests  : Started CourtApplicationTests in 4.207 seconds (JVM running for 5.699)
+2022-01-20 15:17:13.445  INFO 18124 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 18124 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-20 15:17:13.448  INFO 18124 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-20 15:17:13.906  WARN 18124 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-20 15:17:14.784  INFO 18124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-20 15:17:14.790  INFO 18124 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-20 15:17:14.791  INFO 18124 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-20 15:17:14.860  INFO 18124 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-20 15:17:14.860  INFO 18124 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1376 ms
+2022-01-20 15:17:18.742  INFO 18124 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-01-20 15:17:18.905  INFO 18124 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-20 15:17:18.945  WARN 18124 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-01-20 15:17:20.759  INFO 18124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-20 15:17:21.715  INFO 18124 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 8.839 seconds (JVM running for 15.536)
+2022-01-20 15:17:39.951  INFO 18124 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-20 15:17:39.951  INFO 18124 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-20 15:17:39.952  INFO 18124 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
