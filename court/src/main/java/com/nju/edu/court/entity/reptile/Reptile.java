@@ -26,17 +26,7 @@ public class Reptile {
     private StringBuilder content;
 
     public Reptile() {
-        ChromeOptions options = new ChromeOptions();
-        List<String> arguments = initOptions();
-        options.addArguments(arguments);
 
-        String driverPath = "src/main/resources/chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver", driverPath);
-        System.out.println("webdriver path: " + driverPath);
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 10);
-        content = new StringBuilder();
     }
 
     /**
@@ -51,31 +41,50 @@ public class Reptile {
      * @param searchContent 关键词搜索
      */
     public void reptile(String searchContent) throws InterruptedException {
-        driver.get(URL);
-        // 点击参考性案例
-        WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[1]"));
+        try {
+            init();
+            driver.get(URL);
+            // 点击参考性案例
+            WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[1]"));
 
-        search.clear();
-        TimeUnit.SECONDS.sleep(5);
+            search.clear();
+            TimeUnit.SECONDS.sleep(5);
 
-        search.sendKeys(searchContent);
-        WebElement searchButton = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]"));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]")));
-        clickButton(searchButton);
+            search.sendKeys(searchContent);
+            WebElement searchButton = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]"));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]")));
+            clickButton(searchButton);
 
-        WebElement button = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]"));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]")));
-        clickButton(button);
+            WebElement button = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]"));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]")));
+            clickButton(button);
 
-        WebElement text = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p"));
-        System.out.println("get content!");
-        List<WebElement> list = new ArrayList<>();
-        list.add(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p")));
-        list.addAll(text.findElements(By.tagName("p")));
-        System.out.println("get list!");
-        for (WebElement element : list) {
-            content.append(element.getText());
+            WebElement text = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p"));
+            System.out.println("get content!");
+            List<WebElement> list = new ArrayList<>();
+            list.add(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p")));
+            list.addAll(text.findElements(By.tagName("p")));
+            System.out.println("get list!");
+            for (WebElement element : list) {
+                content.append(element.getText());
+            }
+        } finally {
+            driver.close();
         }
+    }
+
+    private void init() {
+        ChromeOptions options = new ChromeOptions();
+        List<String> arguments = initOptions();
+        options.addArguments(arguments);
+
+        String driverPath = "src/main/resources/chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        System.out.println("webdriver path: " + driverPath);
+        driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 10);
+        content = new StringBuilder();
     }
 
     /**
@@ -113,18 +122,5 @@ public class Reptile {
      */
     public void closeDriver() {
         driver.close();
-    }
-
-    public static void main(String[] args) throws Exception {
-        Reptile reptile = new Reptile();
-        reptile.clearContent();
-        reptile.reptile("合同");
-        System.out.println(reptile.getContent());
-
-        reptile.clearContent();
-        reptile.reptile("合同");
-        System.out.println(reptile.getContent());
-
-        reptile.closeDriver();
     }
 }

@@ -88,7 +88,7 @@ public class AnalysisTest {
 
     @Test
     public void test7() {
-        String text = "李大伟，女";
+        String text = "李大卫，女";
         analysis.setParagraph(text);
         analysis.analyse();
         actual = analysis.getRes();
