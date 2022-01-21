@@ -1,6 +1,7 @@
 package com.nju.edu.court.entity;
 
 import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.seg.Segment;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import org.springframework.stereotype.Component;
@@ -85,7 +86,11 @@ public class Analysis {
     }
 
     private void tokenize() {
-        List<Term> termList = StandardTokenizer.segment(paragraph);
+        // 支持地名识别
+        // 支持中国人名识别
+        Segment segment = HanLP.newSegment().enablePlaceRecognize(true).enableNameRecognize(true);
+
+        List<Term> termList = segment.seg(paragraph);
         // 根据词性分词
         for (Term term : termList) {
             if (term.nature.startsWith('n') || "l".equals(term.nature.toString())) {
