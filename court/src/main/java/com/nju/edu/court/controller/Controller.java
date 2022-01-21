@@ -45,7 +45,7 @@ public class Controller {
     @RequestMapping(value = "/getResult", method = RequestMethod.POST)
     @ResponseBody
     @CrossOrigin(origins = "*")
-    public Map<String, List<String>> sendMessage(@RequestParam(value = "text", defaultValue = "我是一名大学生") String text) {
+    public Map<String, List<String>> textAnalysis(@RequestParam(value = "text") String text) {
         // 清除之前的分析内容
         analysis.clear();
         analysis.setParagraph(text);
@@ -78,12 +78,7 @@ public class Controller {
 
         // analyse
         String content = temp.toString();
-        System.out.println(content);
-        analysis.clear();
-        analysis.setParagraph(content);
-        analyse();
-        System.out.println(analysis.getRes());
-        return analysis.getRes();
+        return textAnalysis(content);
     }
 
     /**

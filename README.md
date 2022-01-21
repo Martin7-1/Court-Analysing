@@ -37,7 +37,7 @@ List<Term> termList = StandardTokenizer.segment(“商品和服务”);
 >
 > 很明显，在这两句话之中，“川普”这个词有着不同的含义，如果在第一个语境中将“川普”作为一个完整的词分在一起，显然就破坏了句子原本的含义。
 
-针对这种情况，`HanLP`使用了多种方式来减少这种情况的出现。首先，`HanLP`使用了词性 + 频率的方式来记录词典，即对于相同的几个字，其中的组合可能有些的频数会比较大，有些频数会比较小。`HanLP`基于此来记录词典，可以比较有效的让某些出现次数较多的组合不会被误判。
+针对这种情况，`HanLP`使用了多种方式来减少这种情况的出现。首先，`HanLP`使用了词性 + 频率的方式来记录词典，即对于相同的几个字，其中的组合可能有些的频数会比较大，有些频数会比较小。`HanLP`基于此来记录词典，可以比较有效的让某些出现次数较多的组合不会被误判。`HanLP`支持用户动态添加词典以及自定义词典，也可以自己确定优先级，这让我们要在特定领域使用特定的词典能够进行灵活的调整。
 
 其次，`HanLP`使用了词图的生成方式来进行分析，这也是下面所要讲的
 
@@ -94,9 +94,91 @@ List<Term> termList = StandardTokenizer.segment(“商品和服务”);
 
 
 
+#### 地名的识别
+
+地名识别的算法比较复杂，涉及到了HMM等，通过训练对地名进行标注然后统计词频得到词典，将多个HMM模型叠加可以发挥更加精准的效果。
+
+
+
 ## 前后端通信
 
+### 后端部分
 
+后端部分采用了`SpringBoot`来进行开发，几个重要的接口如下所示：
+
+1. 获取文本分析的结果
+
+	```java
+	/**
+	 * 返回词性分析的结果
+	 * @param text 待分析的文书
+	 * @return 词性分析结果，词性 - 对应的单词
+	 */
+	@RequestMapping(value = "/getResult", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin(origins = "*")
+	public Map<String, List<String>> textAnalysis(@RequestParam(value = "text") String text) {
+		// 清除之前的分析内容
+	    analysis.clear();
+	    analysis.setParagraph(text);
+	    analyse();
+	    return analysis.getRes();
+	}
+	```
+
+2. 上传文件进行分析
+
+	```java
+	/**
+	 * 接受一个文件的传输，返回词法分析的结果
+	 * @param uploadFile 用户上传的从前端接收的文件
+	 * @return 词法分析的结果
+	 * @throws IOException 文件接收异常
+	 */
+	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin(origins = "*")
+	public Map<String, List<String>> uploadFile(@RequestParam("uploadFile") MultipartFile uploadFile) throws IOException {
+	    if (uploadFile == null) {
+	        // 接收失败
+	        return null;
+	    }
+	
+	    InputStream inputStream = uploadFile.getInputStream();
+	    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+	    StringBuilder temp = new StringBuilder();
+	
+	    while (reader.ready()) {
+	        temp.append(reader.readLine());
+	    }
+	
+	    // analyse
+	    String content = temp.toString();
+	    return textAnalysis(content);
+	}
+	```
+
+3. 爬取文书内容
+
+	```java
+	/**
+	 * 爬取文书内容
+	 * @param searchContent 搜索的关键词信息
+	 * @return 文本内容
+	 */
+	@RequestMapping(value = "/reptile", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin(origins = "*")
+	public String reptile(@RequestParam("searchContent") String searchContent) throws InterruptedException {\
+	    reptile.clearContent();
+	    reptile.reptile(searchContent);
+	    return reptile.getContent();
+	}
+	```
+
+	
+
+### 前端部分
 
 
 
