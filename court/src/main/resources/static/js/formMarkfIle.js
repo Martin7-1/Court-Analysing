@@ -22,21 +22,6 @@ var markObject = {
 
 };
 
-var rawMarkObject =  {
-    '当事人 ':[],
-
-    '性别 ':[],
-
-    '民族 ':[],
-
-    '出生地 ':[],
-
-    '案由 ':[],
-
-    '相关法院':[],
-
-}; // 暂时存储使其之后多文件的情况下能够初始化
-
 // 控制时序，在NLP分析得到新的标签后重新获取，绑定事件
 function afterAnalyse() {
     // console.log("这是开始分析按钮绑定的第二个事件")
@@ -60,7 +45,7 @@ function afterAnalyse() {
             if (event.target.value) {
                 str = event.target.value
             }else{
-                str = removeHtml(event.target.innerHTML) // 这个str就是其对应的值    
+                str = removeHtml(event.target.innerHTML) // 这个str就是其对应的值
             }
             console.log('currentPro:'+currentPro+';')
             console.log('currentLabel:' + str + ';')
@@ -87,23 +72,23 @@ function afterAnalyse() {
                                 markObject[k] = newArr;
                                 console.log('the updated Arr is:'+markObject[k])
                                 console.log('the updated object is:')
-                                console.log(markObject)    
-                            }    
+                                console.log(markObject)
+                            }
                         }
-                        
+
                     }
                     if (!isDelete) {
                         console.log('接下来进行增添操作');
                         markObject[key].push(str);
                         console.log('the updated object is:')
-                        console.log(markObject)    
+                        console.log(markObject)
                     }
-                    
+
                 }
-                
-            } 
+
+            }
         }
-    }    
+    }
   }
 }
 
@@ -114,7 +99,7 @@ function afterAnalyse() {
         for (let index = 0; index < btns.length; index++) {
             const element = btns[index];
             element.style.borderBottomColor = '#61BFFF';
-            
+
         }
         btns[i].style.borderBottomColor = 'red';
         currentPro = btns[i].value;
@@ -125,12 +110,12 @@ function afterAnalyse() {
         for (let index = 0; index < allLables.length; index++) {
             const currentLab = allLables[index];
             currentLab.checked = false;
-            
+
         }
         // 再根据markObject中的值进行恢复
         for (let index = 0; index < allLables.length; index++) {
             const currentLab = allLables[index];
-            let curArr 
+            let curArr
             for(let k in markObject){
                 if (currentPro == k) {
                     curArr = markObject[k]; // 当前pro下对应的数组，根据其内数据恢复标签状态
@@ -142,26 +127,26 @@ function afterAnalyse() {
                     break;
                 }
             }
-        
 
-            
-            
+
+
+
         }
         // console.log('currentPro:' + currentPro + ';');
-        
+
     }
   }
 
-  
+
   function removeHtml(Htmlstring) {
     let index = 0
     for (let i = 0; i < Htmlstring.length; i++) {
-        
+
         if (Htmlstring[i] == '>') {
             index = i+1
             break
         }
-        
+
     }
     return Htmlstring.substring(index)
 
@@ -191,11 +176,11 @@ function afterAnalyse() {
     if (toTheEnd != -1) {
         download('mark'+fileth+'.json',blob)
         download('content'+fileth+'.txt',textContent)
-        
+
         console.log("当前保存的文件是:file" + (fileth-1))
         console.log("接下来分析的文件是" + fileth)
         toTheEnd = autoNLP(fileth)
-        fileth = fileth + 1;    
+        fileth = fileth + 1;
     }
   }
 
@@ -221,19 +206,18 @@ function afterAnalyse() {
   function toRawMarkObject() {
       let oriMarkObject = {
         '当事人 ':[],
-    
+
         '性别 ':[],
-    
+
         '民族 ':[],
-    
+
         '出生地 ':[],
-    
+
         '案由 ':[],
-    
+
         '相关法院':[],
-    
-    }  
+
+    }
     return oriMarkObject;
   }
 
-    

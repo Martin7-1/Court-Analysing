@@ -13,14 +13,14 @@
         verb : ['审理','指控','认定','判处','剥夺','提出','消灭','处死','击打'],
         adj : ['严重','恶劣','可恶','糟糕'],
     }
-    
+
     function rawTheWords() {
         words = {
             noun:[],
             verb:[],
             adj:[]
         }
-        
+
     }
 
     // 根据NLP分析结果（对象格式），将其中数据以复选框格式创建子节点
@@ -32,7 +32,7 @@
         var rightParent = document.getElementsByClassName('rightOne')
         removeAllLabels(leftParent)
         removeAllLabels(rightParent)
-        
+
         if (!theFiles || useContentOfTextarea) {
             console.log("未上传文件，分析文本框内容")
             // 将textField内的值传给NLP程序，返回结果赋给words对象
@@ -55,7 +55,7 @@
                     afterAnalyse() // afterAnalyse()函数位于formMarkFile中，用于再生成新标签后重新获取标签，辅助实现标注文件生成
 
                 }
-            }) 
+            })
         }else{
             // 若是多个文件这边只分析第一个文件
             console.log("上传文件，分析首个文件")
@@ -65,7 +65,7 @@
             formdata.append('uploadFile',theFiles[0])
             console.log(formdata.get('uploadFile'))
             let url = 'http://localhost:8080/uploadFile'; // todo:根据你的文件来确定url
-        
+
             jQuery.ajax({
                 type: 'post',
                 url: url,
@@ -80,12 +80,12 @@
                     afterAnalyse()
                 }
             })
-                   
+
         }
 
 
     }
-    
+
     //用于多个文件，在一次性上传多个文件，保存第一个文件的案例与标识后，自动分析下一个文件并生成标签
     function autoNLP(fileth) {
         console.log("清空words")
@@ -97,7 +97,7 @@
         if(fileth == theFiles.length){
             alert("congratulation! the task has been finished!")
             return -1;
-        } 
+        }
         if(fileth < theFiles.length){
             console.log("清除上个文件的残留标签")
             let leftParent = document.getElementsByClassName('leftOne')
@@ -114,14 +114,14 @@
             // console.log(event.target);
             // console.log("data is" + data)
             textAera.innerHTML = data
-            }       
+            }
 
             console.log("分析文件" + fileth)
             let formdata = new FormData;
             formdata.append('uploadFile',theFiles[fileth])
             console.log(formdata.get('uploadFile'))
             let url = 'http://localhost:8080/uploadFile'; // todo:根据你的文件来确定url
-            
+
             jQuery.ajax({
                 type: 'post',
                 url: url,
@@ -138,9 +138,9 @@
             })
             return fileth;
         }
-        
+
     }
-    
+
     // 根据word的内容动态创建节点
     function formLabels(words) {
         for(let key in words){
@@ -153,17 +153,17 @@
                 var li = document.createElement('li');
                 var checkBox = document.createElement('input')
                 checkBox.setAttribute("type","checkbox");
-                var labelCode = '<label class="markLabels" value="' + currentArr[index] + '">' 
+                var labelCode = '<label class="markLabels" value="' + currentArr[index] + '">'
                 var htmlCode = labelCode + ' <input type="checkBox" class="theWords" value="'+currentArr[index]+'">' + currentArr[index] + '</input>' + '</label >'
                 li.innerHTML =htmlCode
-                
-                    
-                
+
+
+
                 // li.appendChild(checkBox)
-                
+
                 if(index % 2 != 1) leftUl.appendChild(li)
                 else rightUl.appendChild(li)
-                
+
             }
             var leftBox = document.querySelector('#' + key +'> .leftOne')
             var rightBox = document.querySelector('#' + key +'> .rightOne')
@@ -174,7 +174,7 @@
     }
 
 
-    
+
     // 实现点击上传按钮，将文本内容同步到输入框，同时保存提交的文件等待分析
     function upLoadFile() {
         let file = document.getElementById("submitLocalFile")
@@ -187,7 +187,7 @@
         console.log(file.files)
         console.log('提交的文件是')
         console.log(file.files[0])
-    
+
         theFiles = file.files; // 将提交的多个文件赋给theFiles
 
         reader.readAsText(file.files[0],'utf-8')
@@ -198,8 +198,8 @@
             // console.log("data is" + data)
             textAera.innerHTML = data
         }
-    
-        
+
+
     }
 
     // parent : HTMLCollection类
@@ -210,13 +210,3 @@
              curParent.innerHTML = ""
          }
     }
-    
-    // console.log(document.getElementsByClassName('markLabels'))
-    
-    // console.log("the leftOne's parent label is:")
-    // console.log(parent)
-    // console.log("parent's innerHTML is" + parent[0].innerHTML)
-    // parent[0].innerHTML = "";
-
-    // var child = document.querySelectorAll('.leftone ul')
-    // console.log(child) 
