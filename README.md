@@ -176,7 +176,11 @@ List<Term> termList = StandardTokenizer.segment(“商品和服务”);
 	}
 	```
 
-	
+`@RequestMapping`是`SpringMVC`中十分重要的一员，在`SpringBoot`中其实有着简化的`GetMapping`来代替，但是`GetMapping`在http中接受的是`get`请求，本项目中所有请求都是用`POST`请求来发送的，所以还是使用了`RequestMapping`。
+
+`@CrossOrigin`是为了解决跨域问题的
+
+`@ResponseBody`其实在这里是非必需的，因为控制类我用了`@RestController`进行标注，该标注是在`@Controller`的基础上进一步的优化，已经自带了`@ResponseBody`的annotation。
 
 ### 前端部分
 
