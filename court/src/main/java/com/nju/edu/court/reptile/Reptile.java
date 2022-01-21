@@ -50,10 +50,14 @@ public class Reptile {
      * 根据关键词进行搜索，并爬取第一个文书
      * @param searchContent 关键词搜索
      */
-    public void reptile(String searchContent) {
+    public void reptile(String searchContent) throws InterruptedException {
         driver.get(URL);
         // 点击参考性案例
         WebElement search = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[1]"));
+
+        search.clear();
+        TimeUnit.SECONDS.sleep(5);
+
         search.sendKeys(searchContent);
         WebElement searchButton = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]"));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]")));
@@ -95,7 +99,7 @@ public class Reptile {
         // 最大化页面
         res.add("--start-maximized");
         // 不显示页面
-        res.add("--headless");
+        // res.add("--headless");
         // Chrome需要的操作
         res.add("--disable-gpu");
         // 不显示图片，加快加载速度
@@ -104,10 +108,23 @@ public class Reptile {
         return res;
     }
 
-    public static void main(String[] args) {
+    /**
+     * 关闭资源
+     */
+    public void closeDriver() {
+        driver.close();
+    }
+
+    public static void main(String[] args) throws Exception {
         Reptile reptile = new Reptile();
         reptile.clearContent();
         reptile.reptile("合同");
         System.out.println(reptile.getContent());
+
+        reptile.clearContent();
+        reptile.reptile("合同");
+        System.out.println(reptile.getContent());
+
+        reptile.closeDriver();
     }
 }

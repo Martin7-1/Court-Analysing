@@ -120,7 +120,7 @@ public class Controller {
     @RequestMapping(value = "/reptile", method = RequestMethod.POST)
     @ResponseBody
     @CrossOrigin(origins = "*")
-    public String reptile(@RequestParam("searchContent") String searchContent) {
+    public String reptile(@RequestParam("searchContent") String searchContent) throws InterruptedException {
         reptile.clearContent();
         reptile.reptile(searchContent);
         return reptile.getContent();
