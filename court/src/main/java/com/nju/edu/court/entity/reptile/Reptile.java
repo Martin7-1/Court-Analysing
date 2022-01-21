@@ -1,4 +1,4 @@
-package com.nju.edu.court.reptile;
+package com.nju.edu.court.entity.reptile;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

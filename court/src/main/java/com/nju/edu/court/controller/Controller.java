@@ -1,7 +1,7 @@
 package com.nju.edu.court.controller;
 
 import com.nju.edu.court.entity.Analysis;
-import com.nju.edu.court.reptile.Reptile;
+import com.nju.edu.court.entity.reptile.Reptile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
