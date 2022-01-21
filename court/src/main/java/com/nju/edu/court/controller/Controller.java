@@ -78,7 +78,10 @@ public class Controller {
 
         // analyse
         String content = temp.toString();
-        return textAnalysis(content);
+        analysis.clear();
+        analysis.setParagraph(content);
+        analyse();
+        return analysis.getRes();
     }
 
     /**

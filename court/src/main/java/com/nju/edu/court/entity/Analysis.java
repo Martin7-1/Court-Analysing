@@ -93,7 +93,7 @@ public class Analysis {
         List<Term> termList = segment.seg(paragraph);
         // 根据词性分词
         for (Term term : termList) {
-            if (term.nature.startsWith('n') || "l".equals(term.nature.toString())) {
+            if (term.nature.startsWith('n') || "l".equals(term.nature.toString()) || "b".equals(term.nature.toString())) {
                 // 名词
                 if (!res.containsKey("noun")) {
                     List<String> temp = new ArrayList<>();

@@ -548,3 +548,48 @@ Session ID: f4d14182701548ac2ea9a9de3c8a14d1
 2022-01-21 16:22:34.819  INFO 21864 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
 2022-01-21 16:22:34.965  INFO 21864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2022-01-21 16:22:34.972  INFO 21864 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 3.173 seconds (JVM running for 3.893)
+2022-01-21 17:03:39.287  INFO 11700 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 11700 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-21 17:03:39.290  INFO 11700 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-21 17:03:39.742  WARN 11700 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-21 17:03:39.974  INFO 11700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-21 17:03:39.981  INFO 11700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-21 17:03:39.981  INFO 11700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-21 17:03:40.049  INFO 11700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-21 17:03:40.049  INFO 11700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 723 ms
+2022-01-21 17:03:41.847  INFO 11700 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-01-21 17:03:41.992  INFO 11700 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-21 17:03:42.147  INFO 11700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-21 17:03:42.154  INFO 11700 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 3.223 seconds (JVM running for 3.951)
+2022-01-21 17:03:46.149  INFO 11700 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-21 17:03:46.149  INFO 11700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-21 17:03:46.150  INFO 11700 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-21 17:09:53.759  INFO 20672 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 20672 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-21 17:09:53.761  INFO 20672 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-21 17:09:54.198  WARN 20672 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-21 17:09:54.439  INFO 20672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-21 17:09:54.445  INFO 20672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-21 17:09:54.445  INFO 20672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-21 17:09:54.516  INFO 20672 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-21 17:09:54.516  INFO 20672 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 724 ms
+2022-01-21 17:09:56.418  INFO 20672 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-01-21 17:09:56.566  INFO 20672 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-21 17:09:56.715  INFO 20672 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-21 17:09:56.721  INFO 20672 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 3.303 seconds (JVM running for 4.798)
+2022-01-21 17:10:17.312  INFO 20672 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-21 17:10:17.312  INFO 20672 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-21 17:10:17.313  INFO 20672 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-21 17:15:16.916  INFO 22000 --- [main] com.nju.edu.court.CourtApplication       : Starting CourtApplication using Java 1.8.0_301 on Zyi with PID 22000 (D:\Java\Programs\Court\Court-Analysing\court\target\classes started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-21 17:15:16.919  INFO 22000 --- [main] com.nju.edu.court.CourtApplication       : No active profile set, falling back to default profiles: default
+2022-01-21 17:15:17.364  WARN 22000 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-21 17:15:17.599  INFO 22000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-21 17:15:17.605  INFO 22000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-21 17:15:17.605  INFO 22000 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-21 17:15:17.672  INFO 22000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-21 17:15:17.672  INFO 22000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 720 ms
+2022-01-21 17:15:19.481  INFO 22000 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-01-21 17:15:19.619  INFO 22000 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-21 17:15:19.768  INFO 22000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-21 17:15:19.775  INFO 22000 --- [main] com.nju.edu.court.CourtApplication       : Started CourtApplication in 3.229 seconds (JVM running for 3.961)
+2022-01-21 17:15:42.560  INFO 22000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-21 17:15:42.561  INFO 22000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-21 17:15:42.562  INFO 22000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

@@ -1,6 +1,7 @@
 package com.nju.edu.court.entity;
 
 import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -83,5 +84,15 @@ public class AnalysisTest {
         analysis.analyse();
         actual = analysis.getRes();
         System.out.println(actual);
+    }
+
+    @Test
+    public void test7() {
+        String text = "李大伟，女";
+        analysis.setParagraph(text);
+        analysis.analyse();
+        actual = analysis.getRes();
+        System.out.println(actual);
+        System.out.println(StandardTokenizer.segment(text));
     }
 }
