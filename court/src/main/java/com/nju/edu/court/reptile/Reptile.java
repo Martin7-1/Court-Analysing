@@ -99,7 +99,7 @@ public class Reptile {
         // 最大化页面
         res.add("--start-maximized");
         // 不显示页面
-        // res.add("--headless");
+        res.add("--headless");
         // Chrome需要的操作
         res.add("--disable-gpu");
         // 不显示图片，加快加载速度
