@@ -55,21 +55,15 @@ public class Reptile {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[1]/div/input[2]")));
             clickButton(searchButton);
 
-            WebElement button = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]"));
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[1]/div[1]")));
+            WebElement button = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[2]/div/div[2]/div[2]/ul/li[1]/div[2]/div[1]"));
             clickButton(button);
 
-            WebElement text = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p"));
+            WebElement text = driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[4]/div[2]/p"));
             System.out.println("get content!");
-            List<WebElement> list = new ArrayList<>();
-            list.add(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/p")));
-            list.addAll(text.findElements(By.tagName("p")));
-            System.out.println("get list!");
-            for (WebElement element : list) {
-                content.append(element.getText());
-            }
+            System.out.println(text.isDisplayed());
+            content.append(text.getAttribute("innerHTML"));
         } finally {
-            driver.close();
+            // driver.close();
         }
     }
 
@@ -108,7 +102,7 @@ public class Reptile {
         // 最大化页面
         res.add("--start-maximized");
         // 不显示页面
-        res.add("--headless");
+        // res.add("--headless");
         // Chrome需要的操作
         res.add("--disable-gpu");
         // 不显示图片，加快加载速度
@@ -122,5 +116,11 @@ public class Reptile {
      */
     public void closeDriver() {
         driver.close();
+    }
+
+    public static void main(String[] args) throws Exception {
+        Reptile reptile = new Reptile();
+        reptile.reptile("抢劫");
+        System.out.println(reptile.getContent());
     }
 }
