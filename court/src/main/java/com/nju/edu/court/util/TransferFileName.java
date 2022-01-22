@@ -8,7 +8,7 @@ import java.io.*;
  */
 public class TransferFileName {
 
-    private static final String ROOT = "src/main/resources/test/";
+    private static final String ROOT = "src/main/resources/demo_analysis/";
 
     private static final String FILE_READER_MARK_PATH = ROOT + "mark1";
     private static final String TEMP_FILE_WRITER_MARK_PATH = ROOT + "mark";
@@ -63,7 +63,7 @@ public class TransferFileName {
      * @throws IOException IO异常，可能是文件路径问题
      */
     public static void finishMark() throws IOException {
-        for (int i = 1; i <= SIZE; i++) {
+        for (int i = 51; i <= 100; i++) {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(TEMP_FILE_WRITER_MARK_PATH + i + ".json")));
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(FILE_WRITER_MARK_PATH + i + ".json")));
             while (reader.ready()) {
@@ -81,7 +81,7 @@ public class TransferFileName {
      * @throws IOException IO异常，可能是文件路径问题
      */
     public static void finishContent() throws IOException {
-        for (int i = 1; i <= SIZE; i++) {
+        for (int i = 51; i <= 100; i++) {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(TEMP_FILE_WRITER_CONTENT_PATH + i + ".txt")));
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(FILE_WRITER_CONTENT_PATH + i + ".txt")));
             while (reader.ready()) {
