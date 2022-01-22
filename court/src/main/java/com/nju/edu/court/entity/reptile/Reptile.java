@@ -63,7 +63,7 @@ public class Reptile {
             System.out.println(text.isDisplayed());
             content.append(text.getAttribute("innerHTML"));
         } finally {
-            // driver.close();
+            driver.close();
         }
     }
 

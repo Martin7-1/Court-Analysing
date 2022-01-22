@@ -190,7 +190,7 @@ List<Term> termList = StandardTokenizer.segment(“商品和服务”);
 
 ## 爬虫
 
-爬虫使用的是`Selenium`来进行模拟爬取，非本项目的研究重点，不过多介绍
+爬虫使用的是`Selenium`来进行模拟爬取，非本项目的研究重点，不过多介绍。爬取的网站是[中国司法案例网](https://anli.court.gov.cn/)。目前只支持单次的爬虫，根据用户给定的关键词来进行爬取。
 
 
 

@@ -688,3 +688,8 @@ Session ID: f4d14182701548ac2ea9a9de3c8a14d1
 2022-01-22 14:31:39.677  INFO 6156 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-01-22 14:31:39.677  INFO 6156 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-01-22 14:31:39.678  INFO 6156 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-01-22 15:23:22.439  INFO 17384 --- [main] com.nju.edu.court.CourtApplicationTests  : Starting CourtApplicationTests using Java 1.8.0_301 on Zyi with PID 17384 (started by Zyi in D:\Java\Programs\Court\Court-Analysing\court)
+2022-01-22 15:23:22.440  INFO 17384 --- [main] com.nju.edu.court.CourtApplicationTests  : No active profile set, falling back to default profiles: default
+2022-01-22 15:23:22.949  WARN 17384 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.nju.edu.court]' package. Please check your configuration.
+2022-01-22 15:23:23.546  INFO 17384 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2022-01-22 15:23:23.931  INFO 17384 --- [main] com.nju.edu.court.CourtApplicationTests  : Started CourtApplicationTests in 1.843 seconds (JVM running for 2.839)
